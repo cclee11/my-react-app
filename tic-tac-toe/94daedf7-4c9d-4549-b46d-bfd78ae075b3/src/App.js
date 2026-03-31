@@ -23,7 +23,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
     nextSquares[i] = 'O';
     }
     onPlay(nextSquares);
-  }
+  
 
     setSquares(nextSquares); 
     setXIsNext(!xIsNext);
@@ -64,7 +64,8 @@ export default function Game() {
   const currenrtSquares = history[history.length - 1];
 
   function handlePlay(nextSquares) {
-    // TODO
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
   }
 
   return (
